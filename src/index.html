@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- css-link -->
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="extra.css">
+    <!-- website-name -->
+    <title>Travel.Go</title>
+</head>
+    <body class="font-poppins ">
+
+        <!-- nav-menu -->
+        <nav class="contianer flex mx-auto justify-between shadow-sm py-6 bg-sky-200">
+            <a href="#" id="logo-brand" class="text-xl font-bold ml-6 hover:text-white">Travel.Go</a>
+            <i class="fa-solid fa-bars inline-block md:hidden text-xl mr-4"></i>
+            <div id="menu-list" class="hidden md:flex relative">
+                <a href="#" id="Home" class="no-underline mr-4 hover:text-white">Home</a>
+                <a href="#" id="Location_nav" class="no-underline mr-4 hover:text-white">Location</a>
+                <a href="#" id="User" class="no-underline mr-4 hover:text-white">User</a>
+                <a href="#" id="About" class="no-underline mr-7 hover:text-white">About</a>
+                <button href="#" id="Booknow" class="no-underline mr-4 hover:text-slate-100 transform transition-transform duration-300 ease-in-out hover:translate-x-1 hover:translate-y-1 bg-yellow-300 font-bold py-1 px-2 rounded-lg -m-10">Book Now</button>
+            </div>
+        </nav>
+
+        <!-- first-page-container -->
+        <div id="contianer-firstpage" class="h-[90vh] relative inset-0 overflow-hidden">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+                  <source src="/video_background/2946-164933125_large.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 bg-black opacity-10"></div>
+            </div>
+            <div id="Search_data" class="relative z-10 items-start  flex flex-col  p-5  mx-auto container h-full">
+                <div id="Label_topic" class="mt-20">
+                    <span class="text-lg text-white">Find Packages</span>
+                    <h1 class="font-bold text-white text-2xl">Seacrh Your <span class="underline">Holiday</span> <i class="fa-solid fa-map-location-dot"></i></h1>
+                </div>
+                <div id="Seacrhing-form" class="relative grid grid-cols-1 lg:grid-cols-3 gap-3 w-full mt-16 container shadow-md mx-auto py-6 px-4 bg-white rounded-md pb-10">
+                    <div id="Seacrh-location" class=" p-4 sm:w-full flex sm:justify-center sm:items-center flex-col">
+                        <label for="Location" class="text-sm ">Seacrh your destination:</label>
+                        <div class="relative ">
+                            <input type="text" name="Location" id="Location" placeholder="Seacrh..." class="p-1 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 rounded-md mt-3 shadow-sm">
+                            <i class="fas fa-search absolute top-1 right-0 mt-3 mr-3 text-gray-500"></i>
+                        </div>
+                    </div>
+                    <div id="Seacrh-date" class="flex flex-col p-4 sm:items-center sm:justify-center">
+                        <label for="Date" class="text-sm">Select your date:</label>
+                        <input type="date" name="Date" id="Date" class="mt-3 max-w-32">
+                    </div>
+                    <div id="Seacrh-price" class="flex flex-col p-4">
+                       <label for="Price" class="text-sm flex justify-between">Price: <span id="currentPrice"></span></label>
+                       <input type="range" name="Price" id="Price" min="300" max="30000" class="mt-3 rounded-lg bg-gradient-to-r from-green-200 to-blue-500" value="2000" step="100">
+                    </div>
+                    <button type="submit" class="absolute left-1/2 transform -translate-x-1/2 bottom-3 px-6 py-1 shadow-sm rounded-lg bg-sky-200 hover:text-gray-200 hover:bg-sky-400 transition-transform duration-300 ease-in-out hover:translate-y-1">Go</button>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- second-page -->
+         <div id="container-secondpage" class="container mx-auto p-4 min-h-screen">
+            <div id="page2Topic" class="text-xl "> Most visited <span class="underline decoration-blue-500">destinations</span></div>
+            <div id="reconmendLocation" class="grid grid-cols-1  md:grid-cols-3 h-full mt-12 gap-4">
+                <!-- <div class="relative flex flex-col py-12  shadow-md  my-5 rounded-lg">
+                    <img src="/tourist pic/aron-van-de-pol-tZDtyUrYrFU-unsplash.jpg" class="absolute  w-full object-cover inset-0" alt="">
+                    <br>
+                    <div class="relative p-1 mt-44 container flex justify-center items-center">
+                        <span class=""><i class="fa-solid fa-location-dot mr-1 text-sky-500"></i>England</span>
+                    </div>
+                    <hr class="relative mx-auto w-3/4 border-gray-400">
+                    <div class="relative my-3"><span class="text-sm ml-3 p-2 bg-yellow-300 rounded-lg text-slate-500 cursor-default">recommend</span> <span class="absolute right-0 mr-4 font-bold text-lg">$700</span></div>
+                    <hr class="relative mx-auto w-3/4 border-gray-400">
+                    <div class="relative px-4 overflow-hidden h-[20vh]">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, omnis ipsa at id doloribus explicabo atque modi illum maiores officia? Similique sint natus cumque quisquam magnam nostrum veritatis eos maiores impedit, enim, sequi fugiat quae saepe amet accusamus omnis non! Lorem ipsum dolor sit amet c</p>
+                        <div class="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white to-transparent"></div>
+                    </div>
+                    <hr class="relative mx-auto w-3/4 border-gray-400">
+                    <button class="p-3 bg-sky-300 rounded-lg shadow-md mx-auto hover:text-gray-200 hover:bg-sky-400">Details</button>
+                </div> -->
+                
+            </div>
+         </div>
+
+         <div id="foot-page-container" class="h-[80vh] relative inset-0 overflow-hidden ">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+                  <source src="/video_background/1918465-uhd_3840_2160_24fps.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 bg-black opacity-10"></div>
+            </div>
+
+            <div id="foot-page-content" class="relative container mx-auto p-5 z-10">
+                <div id="fpc-topic" class="flex  p-3 ">
+                    <div id="text-topic" class="flex w-full justify-center flex-col  p-2 md:flex-row ">
+                        <label for="Email_text" class="mr-0 mb-4 md:mb-0 md:mr-4 "><span class="block text-sm text-white">KEEP IN TOUCH</span> <span class="text-2xl font-bold text-white">Travel with us</span></label>
+                        <input type="email" name="Email_text" id="Email_text" placeholder="ENTER YOUR EMAIL" class="mr-0 md:mr-4 mb-4 md:mb-0 rounded-md h-10 w-80 bg-transparent border-2 border-slate-400 p-2 placeholder-slate-400 text-black focus:bg-white ">
+                        <button type="submit" class="h-10 px-3 text-gray-700 bg-sky-400 rounded-md text-sm hover:bg-sky-500 hover:text-black">SEND <i class="fa-regular fa-paper-plane"></i></button>
+                    </div>
+
+                </div>
+                <div class="flex flex-col container p-4 min-h-full bg-slate-50 rounded-md">
+                    <div class="grid grid-cols-1 md:grid-cols-6 p-4">
+                        <div class="flex flex-col col-span-3">
+                            <div class="m-3"><i class="fa-solid fa-earth-americas text-sky-400"></i> Travel.Go</div>
+                            <div class="text-sm my-3 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe in asperiores sapiente totam quae quidem neque dolore deserunt reiciendis placeat?</div>
+                            <div id="icon-socail m-3">
+                                <a href="#"><i class="fa-brands fa-twitter text-gray-600 text-md mr-2 hover:text-sky-400"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram text-gray-600 text-md mr-2 hover:text-sky-400"></i></a>
+                                <a href="#"><i class="fa-brands fa-facebook text-gray-600 text-md mr-2 hover:text-sky-400"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin text-gray-600 text-md mr-2 hover:text-sky-400"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-span-1 flex flex-col justify-center items-center  ">
+                            <h2 class="">OUR AGENCY</h2>
+                            <ul id="agency" class="decoration no-underline list-none text-sm text-gray-700 ">
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Services</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>Lorem, ipsum.</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Insurance</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Agency</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Tourism</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Payment</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-span-1 flex flex-col justify-center items-center">
+                            <h2 class="">PARTNERS</h2>
+                            <ul id="partners" class="decoration no-underline list-none text-sm text-gray-700 ">
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Booking</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>RentalCar</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>HostelWorld</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>TravelGo</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>TripAdvisor</a></li> 
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-span-1 flex flex-col justify-center items-center">
+                            <h2 class="">LAST MINITE</h2>
+                            <ul id="last-minite" class="decoration no-underline list-none text-sm text-gray-700">
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>London</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>California</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Indonesia</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Europe</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                                <li class="icon-toggle cursor-pointer hover:text-gray-400"><a href="#"><i class="fa-solid fa-chevron-right text-sm mr-1 transition-transform duration-500 "></i>Ocenia</a></li>
+                                <li class="content ml-5 my-2 ">
+                                    <p>thailand</p>
+                                    <p>singapore</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="foot-end" class="flex justify-between items-center p-2 bg-sky-400 rounded-md">
+                    <span class="text-md text-gray-700">BEST TRAVEL WEBSITE THEME</span>
+                    <span class="text-md text-gray-700">COPYRIGHTS RESERVED-MECHTECH 2024</span>
+                </div>
+            </div>
+            
+         </div>
+
+        
+        <script src="index.js"></script>
+    </body>
+</html>
